@@ -1,0 +1,5 @@
+Wiebe:
+
+- "Redirector" en  "User" Classes afgemaakt
+- Gebruiker kan worden doorgeleid naar een andere pagina, indien hij of zei niet bevoegd is om een bepaalde pagina te bezoeken
+- 
