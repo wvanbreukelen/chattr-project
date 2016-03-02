@@ -3,7 +3,7 @@
 require('ajax/init.php');
 
 // Is button pressed?
-if (isset($_POST['dikkebmw']))
+if (isset($_POST['registerButton']))
 {
 	// Defined variables out of the post data
 	$username  = html_entity_decode($_POST['username']);
@@ -14,11 +14,6 @@ if (isset($_POST['dikkebmw']))
 
 	// Validating
 	$validator = new Validator();
-
-	if (!$validator->validateEmail($email))
-	{
-		exit("1");
-	}
 
 	if (!$validator->validateString($username, 3, 12))
 	{
@@ -44,13 +39,15 @@ if (isset($_POST['dikkebmw']))
 	$password = sha1($password);
 
 	// Send into database
-	echo $db->query("INSERT INTO users (`username`, `password`, `email`, `firstName`, `lastName`) VALUES ('$username', '$password', '$email', '$firstName', '$lastName')");
+	if ($db->query("INSERT INTO users (`username`, `password`, `email`, `firstName`, `lastName`) VALUES ('$username', '$password', '$email', '$firstName', '$lastName')"))
+	{
+		exit("0");
+	}
 }
 
 ?>
 
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<title>Chattr - Registreren</title>
@@ -72,7 +69,7 @@ if (isset($_POST['dikkebmw']))
 				<p><input type="text" id="firstName" name="firstName" placeholder="Voornaam"></p>
 				<p><input type="text" id="lastName" name="lastName" placeholder="Achternaam"></p>
 
-				<p><button name="dikkebmw" class="btn-success">Registreren</button></p>
+				<p><button name="registerButton" class="btn-success">Registreren</button></p>
 			</form>
 		</div>
 

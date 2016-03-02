@@ -1,5 +1,8 @@
 <?php
 
+require('ajax/init.php');
+
+
 ?>
 
 <html>
