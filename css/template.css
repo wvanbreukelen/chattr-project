@@ -60,12 +60,35 @@ button {
 	margin-right: auto;
 	height: 400px;
 	position: relative;
+	margin-top: -40px;
 }
 
 .chattr-content h1 {
 	font-size: 56px;
 	font-family: 'chattr-thin';
 	text-align: center;
+}
+
+.chattr-content h2 {
+	font-size: 42px;
+	font-family: 'chattr-thin';
+	margin-left: 80px;
+}
+
+.chattr-content p {
+	font-family: 'chattr-font';
+	margin-left: 80px;
+}
+
+.chattr-content span {
+	float: left;
+	margin-left: 80px !important;
+	padding: 3px;
+}
+
+.chattr-content .userBox {
+	float: right;
+	padding-left: 25px;
 }
 
 .chattr-content button {
