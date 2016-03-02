@@ -17,17 +17,22 @@ class User
 
 	public function getSessionID()
 	{
-		return (isset($id = $_SESSION['userID']) ? $id : false;
+		if (isset($_SESSION['userID']))
+		{
+			return $_SESSION['userID'];
+		}
+
+		return false;
 	}
 
 	public function sessionExists()
 	{
-		return isset($_SESSION['userID']));
+		return isset($_SESSION['userID']);
 	}
 
 	public function deleteSession()
 	{
-		session_destroy(true);
+		session_destroy();
 	}
 
 	public function getDetails()
