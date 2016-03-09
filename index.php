@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <html>
 	<head>
@@ -16,7 +15,10 @@
 		<div class="chattr-content">
 			<h1>Gratis chatten?</h1>
 
-			<center><form action="register.php"><button class="btn-success">Meld je nu aan!</button></form></center>
+			<center><button class="btn-success" onclick="window.location = 'register.php'">Meld je nu aan!</button></center>
+			<br>
+			<br>
+			<center><button class="btn-success" onclick="window.location = 'login.php'">Log hier in!</button></center>
 		</div>
 
 		<div class="chattr-footer">
